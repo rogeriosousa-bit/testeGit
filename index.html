@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio | Rogério</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      :root {
+        --fundo: #0f172a;
+        --card: #1e293b;
+        --texto: #f1f5f9;
+        --destaque: #38bdf8;
+      }
+
+      body {
+        background: var(--fundo);
+        color: var(--texto);
+        transition: 0.3s;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 8%;
+        background: var(--card);
+        position: sticky;
+        top: 0;
+      }
+
+      .logo {
+        color: var(--destaque);
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: var(--texto);
+        text-decoration: none;
+        margin-left: 20px;
+      }
+
+      nav a:hover {
+        color: var(--destaque);
+      }
+
+      button {
+        background: var(--destaque);
+        color: #0f172a;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      section {
+        padding: 80px 10%;
+      }
+
+      .inicio {
+        min-height: 75vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .inicio h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+
+      .inicio h1 span {
+        color: var(--destaque);
+      }
+
+      .inicio p {
+        font-size: 19px;
+        line-height: 1.7;
+        max-width: 600px;
+      }
+
+      .titulo {
+        font-size: 32px;
+        margin-bottom: 30px;
+        color: var(--destaque);
+      }
+
+      .sobre p {
+        line-height: 1.8;
+        max-width: 800px;
+      }
+
+      .habilidades,
+      .projetos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--card);
+        padding: 25px;
+        border-radius: 10px;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card h3 {
+        color: var(--destaque);
+        margin-bottom: 12px;
+      }
+
+      .card p {
+        line-height: 1.6;
+      }
+
+      .contato form {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      input,
+      textarea {
+        padding: 13px;
+        border: none;
+        border-radius: 6px;
+        background: var(--card);
+        color: var(--texto);
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      footer {
+        text-align: center;
+        padding: 25px;
+        background: var(--card);
+      }
+
+      /* Tema claro */
+      body.claro {
+        --fundo: #f1f5f9;
+        --card: #ffffff;
+        --texto: #1e293b;
+        --destaque: #0284c7;
+      }
+
+      @media (max-width: 700px) {
+        header {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        nav a {
+          margin: 5px;
+          display: inline-block;
+        }
+
+        .inicio h1 {
+          font-size: 35px;
+        }
+
+        section {
+          padding: 60px 7%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">Rogério.dev</div>
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <button onclick="mudarTema()">☀ Tema</button>
+    </header>
+
+    <section class="inicio" id="inicio">
+      <h1>Olá, eu sou <span>Rogério!</span></h1>
+
+      <p>
+        Desenvolvedor de sistemas apaixonado por tecnologia, programação e
+        criação de soluções digitais.
+      </p>
+
+      <br />
+
+      <div>
+        <button onclick="irParaProjetos()">Conheça meus projetos</button>
+      </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+      <h2 class="titulo">Sobre mim</h2>
+
+      <p>
+        Sou um profissional da área de tecnologia, interessado em
+        desenvolvimento de software, inovação e aprendizagem contínua. Gosto de
+        transformar ideias em projetos utilizando diferentes tecnologias.
+      </p>
+    </section>
+
+    <section id="habilidades">
+      <h2 class="titulo">Minhas habilidades</h2>
+
+      <div class="habilidades">
+        <div class="card">
+          <h3>HTML</h3>
+          <p>Estruturação de páginas web.</p>
+        </div>
+
+        <div class="card">
+          <h3>CSS</h3>
+          <p>Estilização e criação de layouts responsivos.</p>
+        </div>
+
+        <div class="card">
+          <h3>JavaScript</h3>
+          <p>Interatividade e lógica de programação.</p>
+        </div>
+
+        <div class="card">
+          <h3>Python</h3>
+          <p>Programação, automação e desenvolvimento de APIs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2 class="titulo">Meus projetos</h2>
+
+      <div class="projetos">
+        <div class="card">
+          <h3>Projeto 01</h3>
+          <p>Sistema de gerenciamento de tarefas.</p>
+          <br />
+          <button onclick="verProjeto('Projeto 01')">Ver projeto</button>
+        </div>
+
+        <div class="card">
+          <h3>Projeto 02</h3>
+          <p>Aplicação web para cadastro de usuários.</p>
+          <br />
+          <button onclick="verProjeto('Projeto 02')">Ver projeto</button>
+        </div>
+
+        <div class="card">
+          <h3>Projeto 03</h3>
+          <p>API desenvolvida utilizando Python.</p>
+          <br />
+          <button onclick="verProjeto('Projeto 03')">Ver projeto</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="contato" id="contato">
+      <h2 class="titulo">Entre em contato</h2>
+
+      <form onsubmit="enviarMensagem(event)">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+
+        <input type="email" id="email" placeholder="Seu e-mail" required />
+
+        <textarea
+          id="mensagem"
+          placeholder="Digite sua mensagem"
+          required
+        ></textarea>
+
+        <button type="submit">Enviar mensagem</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2026 Rogério | Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+      // Alternar entre tema claro e escuro
+      function mudarTema() {
+        document.body.classList.toggle("claro");
+      }
+
+      // Navegar até os projetos
+      function irParaProjetos() {
+        document.getElementById("projetos").scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      // Exibir projeto selecionado
+      function verProjeto(projeto) {
+        alert("Você selecionou: " + projeto);
+      }
+
+      // Simular envio do formulário
+      function enviarMensagem(event) {
+        event.preventDefault();
+
+        let nome = document.getElementById("nome").value;
+
+        alert("Obrigado pelo contato, " + nome + "!");
+
+        document.querySelector("form").reset();
+      }
+    </script>
+  </body>
+</html>
