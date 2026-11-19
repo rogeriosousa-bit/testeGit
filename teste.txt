@@ -1,3 +1,7 @@
 
-Primeiro comite
+Primeiro comit
 Minhas primeiras anotações de como utilizar o git
+
+
+Segundo commit explorando as branchs
+Ja levei as informações para o staging
